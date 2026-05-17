@@ -1,0 +1,44 @@
+============================================================
+Ray Degraded Service Detection
+============================================================
+
+[1] Reading and partitioning log data...
+  Total rows: 50000
+  Partitions: 4
+
+[2] Executing Ray remote tasks in parallel...
+  Completed 4 partitions
+
+[3] Merging partition statistics...
+
+Service                      Total   Errors     Slow Timeouts
+-----------------------------------------------------------------
+search-service               10616      904     4581      472
+order-service                10937      717     1151      341
+payment-service               7914     1362     2134      721
+notification-service          8412      436      566      186
+auth-service                 12121      436      545      217
+
+[4] Detecting degraded services...
+
+Found 5 degraded service(s):
+
+Service                   Reason
+----------------------------------------------------------------------
+search-service            slow_rate_43.2%>20%; timeout_472>=5
+order-service             timeout_341>=5
+payment-service           slow_rate_27.0%>20%; error_rate_17.2%>10%; timeout_721>=5
+notification-service      timeout_186>=5
+auth-service              timeout_217>=5
+
+[5] Standard output format (service_name,reason):
+
+search-service,slow_rate_43.2%>20%; timeout_472>=5
+order-service,timeout_341>=5
+payment-service,slow_rate_27.0%>20%; error_rate_17.2%>10%; timeout_721>=5
+notification-service,timeout_186>=5
+auth-service,timeout_217>=5
+
+============================================================
+Detection complete.
+============================================================
