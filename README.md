@@ -1,4 +1,4 @@
-# Comp3041J Mini-Project 2 - Cloud Service Log Analytics
+# Mini-Project 2 - Cloud Service Log Analytics
 
 ---
 
@@ -7,7 +7,7 @@
 ```
 CloudComputing_miniP2/
 │
-├── Comp3041J MiniProject 2 Dataset.csv    # Input dataset (50,000 log entries)
+├── MiniProject 2 Dataset.csv    # Input dataset (50,000 log entries)
 │
 ├── MapReduce.py                            # MapReduce baseline analysis
 ├── mapreduce_results.txt                   # MapReduce output results
@@ -96,13 +96,13 @@ Error handling: Skips malformed lines gracefully
 Usage
 bash
 # Run locally
-python MapReduce.py "Comp3041J MiniProject 2 Dataset.csv"
+python MapReduce.py "MiniProject 2 Dataset.csv"
 
 # Save results to file
-python MapReduce.py "Comp3041J MiniProject 2 Dataset.csv" > mapreduce_results.txt
+python MapReduce.py "MiniProject 2 Dataset.csv" > mapreduce_results.txt
 
 # Custom slow threshold
-python MapReduce.py --slow-threshold 1000 "Comp3041J MiniProject 2 Dataset.csv"
+python MapReduce.py --slow-threshold 1000 "MiniProject 2 Dataset.csv"
 Results Summary
 Service	Requests	Errors (≥500)
 auth-service	12,121	436
@@ -193,4 +193,4 @@ Versioning: Built-in object versioning for log integrity
 
 Upload Command (AWS S3 Example)
 bash
-aws s3 cp "Comp3041J MiniProject 2 Dataset.csv" s3://comp3041j-logs/input/
+aws s3 cp "MiniProject 2 Dataset.csv" s3://compxxxxj-logs/input/
